@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>英雄</title>
+     <link rel="stylesheet" href="/static/css/main.css">
 </head>
 <body>
-    <h1>英雄</h1>
+    <div class="main">
+        <h1>英雄</h1>
 
-    {% if book %}
+        {% if book %}
 
-        <ul>
-            {% for i in book.heroinfo_set.all %}
-            <li>{{ i.name }}</li>
-            {% empty %}
-            没有数据
-            {% endfor %}
-        </ul>
-    {% else %}
-        没有英雄
-    {% endif %}
+            <ul>
+                {% for i in book.heroinfo_set.all %}
+                <li>{{ i.name }}</li>
+                {% empty %}
+                没有数据
+                {% endfor %}
+            </ul>
+        {% else %}
+            没有英雄
+        {% endif %}
 
-    <a href="/demo2/index/">主页</a>
-    <a href="/demo2/list/">返回书籍列表</a>
+        <a href="/demo2/index/">主页</a>
+        <a href="{% url 'demo2url:index' %}">返回主页</a>
+        <a href="/demo2/list/">书籍列表</a>
+        <a href="{% url 'demo2url:list' %}">返回书籍列表</a>
+    </div>
 
 
 </body>

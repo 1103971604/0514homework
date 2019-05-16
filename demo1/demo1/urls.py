@@ -20,6 +20,6 @@ from django.conf.urls import url,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('demo2/',include('demo2.urls'))
+    url('demo2/',include('demo2.urls',namespace='demo2url'))
 
 ]

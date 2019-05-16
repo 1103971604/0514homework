@@ -1,0 +1,14 @@
+div.main{
+    width:1000px;
+    margin:0 auto;
+    background-color:#d8cccc;
+    text-align: center;
+
+
+
+}
+
+
+div.main ul{
+    list-style: none;
+}

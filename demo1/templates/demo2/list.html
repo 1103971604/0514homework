@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>列表</title>
+     <link rel="stylesheet" href="/static/css/main.css">
 </head>
 <body>
-    <h1>列表</h1>
+    <div class="main">
+        <h1>列表</h1>
 
-    {% if books %}
-    <!--有书-->
-        <ul>
-            {% for i in books %}
-            <li><a href="/demo2/hero/{{ i.id }}/">{{ i.title }}</a></li>
-            {% empty %}
-            没有数据
-            {% endfor %}
-        </ul>
-    {% else %}
-        没有书
-    {% endif %}
-    <a href="/demo2/index/">主页</a>
+        {% if books %}
+        <!--有书-->
+            <ul>
+                {% for i in books %}
+                <li><a href="/demo2/hero/{{ i.id }}/">{{ i.title }}</a></li>
+                <li><a href="{% url 'demo2url:hero' i.id %}">{{i.title}}</a></li>
+                {% empty %}
+                没有数据
+                {% endfor %}
+            </ul>
+        {% else %}
+            没有书
+        {% endif %}
+        <a href="/demo2/index/">主页</a>
+        <a href="{% url 'demo2url:index' %}">去主页</a>
+
+
+    </div>
 
 </body>
 </html>
