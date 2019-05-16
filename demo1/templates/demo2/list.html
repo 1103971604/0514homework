@@ -14,7 +14,7 @@
             <ul>
                 {% for i in books %}
                 <li><a href="/demo2/hero/{{ i.id }}/">{{ i.title }}</a></li>
-                <li><a href="{% url 'demo2url:hero' i.id %}">{{i.title}}</a></li>
+                <li><a href="{% url 'demo2url:hero' i.id %}">{{i.title}}</a> <a href="{% url 'demo2url:deletebook' i.id %}">删除</a></li>
                 {% empty %}
                 没有数据
                 {% endfor %}
@@ -22,6 +22,8 @@
         {% else %}
             没有书
         {% endif %}
+
+        <a href="{% url 'demo2url:addbook' %}">添加一本书</a>
         <a href="/demo2/index/">主页</a>
         <a href="{% url 'demo2url:index' %}">去主页</a>
 

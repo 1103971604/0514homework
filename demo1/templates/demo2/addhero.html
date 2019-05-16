@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加角色</title>
+</head>
+<body>
+    <h1>添加英雄</h1>
+
+    <form action="{% url 'demo2url:addhero' bookid %}" method="post">
+
+        姓名: <input type="text" name="username">
+        <br>
+        年龄: <input type="number" name="age" min="0">
+        <br>
+        技能: <input type="text" name="skill">
+        <br>
+        <input type="submit" value="添加">
+
+    </form>
+
+
+
+
+</body>
+</html>

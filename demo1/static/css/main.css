@@ -1,13 +1,9 @@
-div.main{
-    width:1000px;
-    margin:0 auto;
+div.container{
+    width:700px;
     background-color:#d8cccc;
-    text-align: center;
-
 
 
 }
-
 
 div.main ul{
     list-style: none;

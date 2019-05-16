@@ -13,7 +13,7 @@
 
             <ul>
                 {% for i in book.heroinfo_set.all %}
-                <li>{{ i.name }}</li>
+                <li>{{ i.name }} <a href="{% url 'demo2url:deletehero' i.id%}">删除</a></li>
                 {% empty %}
                 没有数据
                 {% endfor %}
@@ -22,6 +22,7 @@
             没有英雄
         {% endif %}
 
+        <a href="{% url 'demo2url:addhero' book.id %}">添加英雄</a>
         <a href="/demo2/index/">主页</a>
         <a href="{% url 'demo2url:index' %}">返回主页</a>
         <a href="/demo2/list/">书籍列表</a>
